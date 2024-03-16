@@ -1,0 +1,553 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira:wdth,wght@94.2,512&display=swap');
+:root{
+    --color:#007F5F;
+    --color-hover:#919191;
+    --color-active:rgba(70, 138, 112, 0.631);
+    --txt-clr:rgb(255, 255, 255);
+}
+
+a{
+    text-decoration: none;
+}
+
+*{ 
+    font-family:"Segoe UI", "Saira", sans-serif; 
+    padding: 0;
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    background-color: whitesmoke;
+}
+
+textarea {
+    resize: none;
+  }
+
+
+/* ::-webkit-scrollbar {
+    width: 8px;
+    background-color: white;
+  }
+
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color); 
+    border-radius: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-hover); 
+  } */
+
+
+
+
+
+.main-nav{
+    background-color: white;
+    box-shadow: 0 0 2em 0.2em rgba(50, 49, 104, 0.233);
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin:auto;
+    width: 90%;
+}
+
+.logo > a{
+    color: black;
+}
+
+.nav-links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5em;
+}
+
+.nav-links a{
+    text-align: center;
+    text-transform: uppercase;
+    padding: 0;
+    text-decoration: none;
+    color: var(--color);
+    padding: 0.3em 1.1em;
+    border-radius: 3px;
+}
+
+.nav-links a:hover{
+    color: white;
+    background-color: var(--color);
+    font-weight: 500;
+}
+
+.nav-icons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5em;
+}
+
+.fas{
+    color: var(--color);
+    font-size: 1.25em;
+    font-weight: 100;
+    padding-top:0;
+}
+
+.main{
+    min-height: 80vh;
+}
+
+
+.button{
+    
+    background-color: var(--color);
+    color: var(--txt-clr);
+    border: 0;
+    border-radius: 3px;
+    font-size: 1em;
+    font-weight: 600;
+    padding: 0.5em 2em;
+}
+.button:hover{
+    background-color: var(--color-hover);
+    cursor: pointer;
+    
+}
+.button:active{
+    background-color: var(--color-active);
+}
+
+.card{
+    position: relative;
+    color: rgb(44, 44, 43);
+    background-color: transparent;
+    text-transform: capitalize;
+    width: 22em; /*29*/
+    height: 17em; /*23*/
+    font-weight: 600;
+    border-radius: 0.3em;
+    /* box-shadow: 0 0 0.2em 0.05em rgba(3, 1, 19, 0.068); */
+    overflow: hidden;
+    transition: box-shadow 0.35s ease,transform 0.35s ease;
+    background-image: linear-gradient(180deg ,white , transparent);
+}
+.card::after{
+    content: "";
+    width: 0%;
+    height: 0.25em;
+    position: absolute;
+    background-color: var(--color);
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    transition: width 0.2s ease-out;
+}
+.card > img{
+    width:100%;
+    height: 70%;
+    object-fit: cover;
+    border-radius: 0.3em;
+}
+
+
+.card:hover{
+    transform: translateY(-2%) scale(1.05);
+    box-shadow: 0 0.5em 0.8em 0.0em rgba(50, 49, 104, 0.349);
+    /* border-radius:0 0 2em 2em; */
+}
+
+.card:hover::after{
+    width: 100%;
+}
+
+/* .card >:not(img){
+    margin-left: 5%;
+} */
+
+/* .card .button{
+    margin-top: 1em;
+    width: 90%;
+    border-radius: 3px;
+    background-color: white;
+    border: 3px solid var(--color);
+    color: var(--color);
+    font-weight: bold;
+    
+} */
+/* 
+.card .button:hover{
+    background-color: var(--color);
+    color: white;
+} */
+
+/* .card > .price{
+    position: absolute;
+    color: white;
+    background-color: #007f5fcc;
+    border-radius: 0;
+    padding: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0;
+    right: 0;  
+} */
+
+.cards-grid{
+    padding-top: 1.45em;
+    /* border:0.5em blue solid; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3em;
+}
+
+.card > .name_img{
+    height: 25%;
+    padding: 0.2em;
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    align-items: center;
+}
+
+.user-image{
+    width: 36px;
+    height: 36px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid #007f5f;
+}
+.card > .name_img > .text {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.card > .name_img > .text >span:nth-child(2){
+    font-size: 0.94m;
+    color: rgba(56, 55, 55, 0.726);
+}
+
+.card > .recommended-tag{
+    position: absolute;
+    color: white;
+    background-color: #007F5F;
+    border-radius: 0px 0px 5px 0;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;  
+}
+.card > .new-tag{
+    position: absolute;
+    color: white;
+    background-color: #00377f;
+    border-radius: 0px 0px 5px 0;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;  
+}
+
+#name {
+    margin: 0;
+    font-size: 1.1em;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: keep-all;
+    white-space: nowrap; 
+}
+	
+/* Small screen devices (600px and above) */
+@media only screen and (min-width: 0px) {
+    .nav-links{
+        display: flex;
+        gap: 0.75em;
+          align-items: center;
+    justify-content: center;
+    }
+    .nav-icons{
+        display: flex;
+        gap: 0.75em;
+          align-items: center;
+    justify-content: center;
+    }
+    .cards-grid{
+        margin: 1em;
+        padding-top: 1.45em;
+        /* border:0.5em blue solid; */
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3em;
+    }
+}
+
+/* Medium screen devices (768px and above) */
+@media only screen and (min-width: 800px) {
+    .nav-links{
+        display: flex;
+        gap: 1.5em;
+        align-items: center;
+        justify-content: center;
+    }
+    .nav-icons{
+        display: flex;
+        gap: 1em;
+        align-items: center;
+        justify-content: center;
+    }
+    .cards-grid{
+        padding-top: 1.45em;
+        /* border:0.5em blue solid; */
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3em;
+    }
+}
+
+/* Medium screen devices (768px and above) */
+@media only screen and (min-width: 1200px) {
+    .nav-links{
+        display: flex;
+        gap: 1.5em;
+        align-items: center;
+        justify-content: center;
+    }
+    .nav-icons{
+        display: flex;
+        gap: 1em;
+        align-items: center;
+        justify-content: center;
+    }
+    .cards-grid{
+        padding-top: 1.45em;
+        /* border:0.5em blue solid; */
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 3em;
+    }
+}
+
+
+/* Big screen devices (889px and above) */
+@media only screen and (min-width: 1560px) {
+    .nav-links{
+        display: flex;
+        gap: 2.5em;
+          align-items: center;
+    justify-content: center;
+    }
+    .nav-icons{
+        display: flex;
+        gap: 1.5em;
+          align-items: center;
+    justify-content: center;
+    }
+    .cards-grid{
+        padding-top: 1.45em;
+        /* border:0.5em blue solid; */
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 3em;
+    }
+}
+
+.footer{
+    padding: 2em 0em;
+    margin-top:5em ;
+    bottom: 0;
+    color: var(--txt-clr);
+    width:100%;
+    background-color: var(--color);
+}
+.footer *{
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+footer  a{
+    color:white;
+    font-weight: bold;    
+}
+
+select{
+    height: 3em;
+    background-color: none;
+    padding: 0.5em 2em;
+    border: solid 2px rgba(245, 229, 229, 0.37);
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+
+select:focus{
+    border: solid 2px var(--color);
+    outline: none;
+}
+
+input ,textarea{
+    box-sizing: border-box;
+    padding:0.5em 0.5em;
+    background-color: #eeeeeeb6;
+    border: 1px solid #eeeeeeb6;
+    border-radius: 3px;
+    min-width: 100%;
+
+}
+
+input:focus ,textarea:focus{
+    outline: none;
+}
+
+.notifi{
+    
+}
+.nav-svg{
+    fill: var(--color);
+    height: 1.25em;
+    width: fit-content;
+    stroke: var(--color);
+
+}
+.nav-svg > line{
+    stroke: var(--color);
+
+}
+
+
+#sell{
+    width: 20px;
+    height: 20px;
+}
+
+
+
+
+
+#seperatorLine{
+    width: 80%;
+    height: 1px;
+    background-color: var(--color-active);
+    margin: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*Start of Notifiaction Panelllll*/
+
+.notification-container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.notification-container > #notificationButton{
+    position: absolute;
+    visibility: hidden;
+    /* visibility: hidden; */
+}
+
+.notification-container > #notificationButton:checked ~ #notificationPanelContainer{
+    height: 500px; /* to make panel visiable*/
+}
+
+
+.notification-container > #notificationLabel{
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+
+.notification-container > #notificationLabel::before{
+    content: "9";
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top:-0.5em;
+    right: -0.5em;
+    border-radius: 50%;
+    width: 1.25em;
+    height: 1.25em;
+    background-color: rgb(255, 69, 69);
+    color :black;
+    font-weight: 400;
+}
+
+.notification-container > #notificationPanelContainer{  
+    z-index: 1;
+    position: absolute;
+    overflow: hidden;
+    width: 300px;
+    height: 0px;
+    top: 30px;
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 10px;
+    transition: height 0.15s ease-in;
+    
+}
+#notificationPanelContainer > #notificationPanel{
+    box-sizing: border-box;
+    border-radius: 10px; /*must have same as panel container*/
+    width: 100%;
+    height: 100%;
+    border: solid var(--color);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+#notificationPanelContainer > #notificationPanel > h3{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    
+}
+
+#notificationPanel > #notificationContainer *{
+    margin:0;
+    padding: 0;
+}
+
+#notificationPanel > #notificationContainer{
+    display: block;
+    margin-inline: auto;
+    margin-top:0.5em;
+    box-sizing: border-box;
+    width: 90%;
+    height: fit-content;
+    background-color: rgba(0, 0, 0, 0.250);
+    border-radius: 10px;
+}
+
+#notificationPanel > #notificationContainer > #notificationInfo{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.5em;
+}
+
+#notificationPanel > #notificationContainer > #notificationInfo > img{
+border-radius:50% ;
+}
+
+
+/*End Of Notification Panel*/
